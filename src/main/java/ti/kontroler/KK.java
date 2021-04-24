@@ -12,8 +12,13 @@ import java.util.HashMap;
 
 @WebServlet(name = "KK", value = "/KK")
 public class KK extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendError(401,"Brak dostępu do strony o takim adresie");
+    }
+
+    protected void doGetBackup(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
 
@@ -107,7 +112,15 @@ public class KK extends HttpServlet {
         String kolorTla = (String) aplikacja.getAttribute("kolorTla");
         if(kolorTla == null) kolorTla = "white";
         HashMap<String,Integer> listaUzytkownikow = (HashMap<String,Integer>) aplikacja.getAttribute("listaUzytkownikow");
-
+        if(listaUzytkownikow == null) {
+            listaUzytkownikow = new HashMap<>();
+            listaUzytkownikow.put("admin", 2);
+            listaUzytkownikow.put("user1", 1);
+            listaUzytkownikow.put("user2", 0);
+            listaUzytkownikow.put("user3", 0);
+            listaUzytkownikow.put("user4", 0);
+            aplikacja.setAttribute("listaUzytkownikow", listaUzytkownikow);
+        }
 
         String komunikat = "Niepoprawny login i hasło";
 
