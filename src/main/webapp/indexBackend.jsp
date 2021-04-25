@@ -39,23 +39,16 @@
         }
 
         function pobierzSugestie() {
-            var wartosc = { wartosc: document.getElementById("pole").value };
+            var wartosc = document.getElementById("pole").value;
             var wynik = {
                 success: function (requester) {
-                    var rezultat = "";
-                    var odpowiedz = JSON.parse(requester.responseText);
-
-                    for(var i=0;i<odpowiedz.sugestia.length;i++) {
-                        rezultat += "<div class='lista'>" + odpowiedz.sugestia[i] + "</div>";
-                    }
-                    el.innerHTML = rezultat;
+                    el.innerHTML = requester.responseText;
                 },
                 failure: function (requester) {
                     alert("Wystąpił błąd: " + requester.status);
                 }
             };
-            var typDanych = "application/json";
-            wyslijAsynchronicznie('sugestieJSON', wynik, 'POST', JSON.stringify(wartosc), typDanych);
+            wyslijAsynchronicznie('sugestieBackend?wartosc='+wartosc, wynik);
         }
 
     </script>

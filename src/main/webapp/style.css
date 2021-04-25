@@ -1,0 +1,26 @@
+body {
+    font-size: 20px;
+    font-family: "Tahoma";
+    color: white;
+    background-color: black;
+}
+
+div#wyniki {
+    font-family: "Tahoma";
+    border: 1px solid #333;
+    background-color: #555;
+    position: absolute;
+    display: none;
+    width: 303px;
+    z-index: 100;
+    font-size: 80%;
+}
+
+#pole {
+    font-family: "Tahoma";
+    font-size: 90%;
+    font-weight: bold;
+    width: 300px;
+    color: white;
+    background-color: #222;
+}
