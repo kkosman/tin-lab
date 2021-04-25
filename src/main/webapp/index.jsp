@@ -39,7 +39,11 @@
         }
 
         function pobierzSugestie() {
-            var wartosc = { wartosc: document.getElementById("pole").value };
+            if(document.getElementById("pole").value.length > 0) {
+                var wartosc = { wartosc: document.getElementById("pole").value };
+            } else {
+                return;
+            }
             var wynik = {
                 success: function (requester) {
                     var rezultat = "";

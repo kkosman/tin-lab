@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 @WebServlet(name = "sugestieJSON", value = "/sugestieJSON")
 public class sugestieJSON extends HttpServlet {
@@ -47,7 +48,9 @@ public class sugestieJSON extends HttpServlet {
 
         ArrayList<String> sugestie = new ArrayList<>();
         for(String samochod: lista) {
-            if(samochod.startsWith(query)) {
+
+            Pattern pattern = Pattern.compile("^"+query+".*", Pattern.CASE_INSENSITIVE);
+            if(pattern.matcher(samochod).find()) {
                 sugestie.add(samochod);
             }
         }

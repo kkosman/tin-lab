@@ -6,7 +6,7 @@
 <form action="KK?akcja=uprawnienia" method="post">
   <input type="hidden" name="uzytkownik" value="admin">
   <label for="uprawnienia">admin:</label>
-  <select name="uprawnienia" id="uprawnienia" data-selected="[[ADMIN]]">
+  <select name="uprawnienia" id="uprawnienia" data-selected="${applicationScope.listaUzytkownikow['admin']}">
     <option value="0">Nieaktywny</option>
     <option value="1">Aktywny</option>
     <option value="2">Administrator</option>
@@ -16,7 +16,7 @@
 <form action="KK?akcja=uprawnienia" method="post">
   <input type="hidden" name="uzytkownik" value="user1">
   <label for="uprawnienia">user1:</label>
-  <select name="uprawnienia" id="uprawnienia" data-selected="[[USER1]]">
+  <select name="uprawnienia" id="uprawnienia" data-selected="${applicationScope.listaUzytkownikow['user1']}">
     <option value="0">Nieaktywny</option>
     <option value="1">Aktywny</option>
     <option value="2">Administrator</option>
@@ -26,7 +26,7 @@
 <form action="KK?akcja=uprawnienia" method="post">
   <input type="hidden" name="uzytkownik" value="user2">
   <label for="uprawnienia">user2:</label>
-  <select name="uprawnienia" id="uprawnienia" data-selected="[[USER2]]">
+  <select name="uprawnienia" id="uprawnienia" data-selected="${applicationScope.listaUzytkownikow['user2']}">
     <option value="0">Nieaktywny</option>
     <option value="1">Aktywny</option>
     <option value="2">Administrator</option>
@@ -36,7 +36,7 @@
 <form action="KK?akcja=uprawnienia" method="post">
   <input type="hidden" name="uzytkownik" value="user3">
   <label for="uprawnienia">user3:</label>
-  <select name="uprawnienia" id="uprawnienia" data-selected="[[USER3]]">
+  <select name="uprawnienia" id="uprawnienia" data-selected="${applicationScope.listaUzytkownikow['user3']}">
     <option value="0">Nieaktywny</option>
     <option value="1">Aktywny</option>
     <option value="2">Administrator</option>
@@ -46,7 +46,7 @@
 <form action="KK?akcja=uprawnienia" method="post">
   <input type="hidden" name="uzytkownik" value="user4">
   <label for="uprawnienia">user4:</label>
-  <select name="uprawnienia" id="uprawnienia" data-selected="[[USER4]]">
+  <select name="uprawnienia" id="uprawnienia" data-selected="${applicationScope.listaUzytkownikow['user4']}">
     <option value="0">Nieaktywny</option>
     <option value="1">Aktywny</option>
     <option value="2">Administrator</option>

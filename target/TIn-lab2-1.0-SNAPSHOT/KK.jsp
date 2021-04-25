@@ -1,4 +1,5 @@
 <%@ page import="ti.Narzedzia" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" %>
 <!DOCTYPE html>
 <html style="background-color: ${ (applicationScope.kolorTla != null) ? applicationScope.kolorTla : 'white' }">
@@ -20,6 +21,18 @@
         strona = Narzedzia.filtrujStrone(strona, "glowna;kwadratowe;link3;ustawienia;administracja");
     } else {
         strona = Narzedzia.filtrujStrone(strona, "glowna;kwadratowe;link3");
+    }
+
+
+    HashMap<String,Integer> listaUzytkownikow = (HashMap<String,Integer>) application.getAttribute("listaUzytkownikow");
+    if(listaUzytkownikow == null) {
+        listaUzytkownikow = new HashMap<>();
+        listaUzytkownikow.put("admin", 2);
+        listaUzytkownikow.put("user1", 1);
+        listaUzytkownikow.put("user2", 0);
+        listaUzytkownikow.put("user3", 0);
+        listaUzytkownikow.put("user4", 0);
+        application.setAttribute("listaUzytkownikow", listaUzytkownikow);
     }
 %>
 
